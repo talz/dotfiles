@@ -1,0 +1,1 @@
+../../../../Dropbox/Profile/bash/bashrc
