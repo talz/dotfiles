@@ -66,6 +66,8 @@ let NERDTreeWinSize=50
 let NERDTreeIgnore = ['\(\.pyc\|cscope.files\|cscope.out\|tags\)$']
 
 "let g:tmux_navigator_no_mappings = 1
+"
+cnoreabbrev NF NERDTreeFind
 
 nnoremap <silent> <C-w><C-h> :TmuxNavigateLeft<cr>
 nnoremap <silent> <C-w><C-j> :TmuxNavigateDown<cr>
