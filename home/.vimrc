@@ -59,10 +59,11 @@ let g:clang_library_path = '/Applications/Xcode.app/Contents/Developer/Toolchain
 "nnoremap \ :Ag<SPACE>
 
 let Cscope_JumpError=0
-let Tlist_WinWidth=50
-let Tlist_Use_Right_Window=1
+let Tlist_WinWidth=60
+"let Tlist_Use_Right_Window=1
+let Tlist_Use_Right_Window=0
 let Tlist_File_Fold_Auto_Close=1
-let NERDTreeWinSize=50
+let NERDTreeWinSize=60
 let NERDTreeIgnore = ['\(\.pyc\|cscope.files\|cscope.out\|tags\)$']
 
 "let g:tmux_navigator_no_mappings = 1
@@ -75,8 +76,8 @@ nnoremap <silent> <C-w><C-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <C-w><C-l> :TmuxNavigateRight<cr>
 nnoremap <silent> <C-w><C-\> :TmuxNavigatePrevious<cr>
 
-map <F3> :NERDTreeToggle<CR>
-map <F4> :Tlist<CR>
+map <F3> :TlistClose<CR>:NERDTreeToggle<CR>
+map <F4> :NERDTreeClose<CR> :Tlist<CR>
 
 map <F6> :cp<CR>
 map <F7> :cn<CR>
