@@ -54,16 +54,20 @@ let grepprg="ag --nogroup --nocolor"
 let g:ctrlp_use_caching=1
 
 let g:clang_library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/'
+let g:clang_complete_copen=1
+let g:clang_complete_macros=1
+let g:clang_use_library=1
+
 
 "command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 "nnoremap \ :Ag<SPACE>
 
 let Cscope_JumpError=0
-let Tlist_WinWidth=60
+let Tlist_WinWidth=55
 "let Tlist_Use_Right_Window=1
 let Tlist_Use_Right_Window=0
 let Tlist_File_Fold_Auto_Close=1
-let NERDTreeWinSize=60
+let NERDTreeWinSize=55
 let NERDTreeIgnore = ['\(\.pyc\|cscope.files\|cscope.out\|tags\)$']
 
 "let g:tmux_navigator_no_mappings = 1

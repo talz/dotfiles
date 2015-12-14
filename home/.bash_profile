@@ -8,6 +8,7 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
+
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
@@ -47,8 +48,10 @@ fi
 
 # TODO: do this only if we are on mac
 alias ls='ls -G'
+alias adb_choose='source ~/bin/adb_choose'
 alias tl='tmux list-session'
 alias ta='tmux attach-session -t'
+alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 
 #TODO: do this only if this file exists
 . $HOME/bin/git-completion.bash
@@ -63,8 +66,14 @@ export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:$HOME/bin/libmobiledevice/"
 PATH="$HOME/bin:$PATH"
 
 PATH="$HOME/bin/libmobiledevice:$PATH"
+#PATH="$HOME/.depot_tools:$PATH"
+export NACL_SDK_ROOT=~/.nacl_sdk/pepper_44
+
+
 
 alias ilog='idevicesyslog -u `idevice_id -l`'
 
 export CLICOLOR=1
 #export TERM=xterm-256color
+export GOPATH=$HOME/code/talz/go
+export SLACK_TOKEN="xoxp-7424968405-7426320754-8370589138-e30a69"
