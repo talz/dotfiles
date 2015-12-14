@@ -1,0 +1,1 @@
+export CLASSPATH=$(cat jars.list | while read lib; do find ~/.m2 -name ${lib}.jar; done | tr '\n' ':')

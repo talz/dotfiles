@@ -1,0 +1,4 @@
+#!/bin/sh
+find . -name "*.java" > cscope.files
+cscope -b -k
+ctags $(cat cscope.files)

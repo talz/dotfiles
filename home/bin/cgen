@@ -1,0 +1,4 @@
+#!/bin/sh
+find -regextype posix-egrep -regex ".+\.(c|cc|cpp|h|hpp|ipp|m|mm)" > cscope.files
+cscope -b -k
+ctags $(cat cscope.files)

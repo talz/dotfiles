@@ -1,0 +1,1 @@
+find /Users/talz/Library/Developer/Xcode/DerivedData/iphone-frzjqoemajgynyepxqzphuqdldmr/Build/Products -name *.a | xargs libtool -static -o /Users/talz/code/screenovate/panda_delivery/screenovate/Libs/AVSink/libavstack.a 

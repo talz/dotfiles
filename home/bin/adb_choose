@@ -1,0 +1,18 @@
+#!/bin/sh
+ids=`adb devices | grep -w device | awk '{ print $1; }'`
+names=`for i in $ids; 
+do 
+    adb -s $i shell getprop ro.product.name | tr -dc '[[:print:]]'; 
+    echo " (sdk: $(adb -s $i shell getprop ro.build.version.sdk | tr -dc '[[:print:]]'))";
+done;`
+
+paste <(echo "$names") <(echo "$ids") | cat -n | column -t
+
+printf "Choose device: "
+read var 
+var+="q;d"
+device=`adb devices | grep -w device | awk '{ print $1; }' | sed "$var"`
+
+export ANDROID_SERIAL=$device
+export TARGET_ARCH=`adb shell getprop ro.product.cpu.abi | awk -F'-' '{ print $1; }'`
+export TARGET_SDK=`adb shell getprop ro.build.version.sdk`

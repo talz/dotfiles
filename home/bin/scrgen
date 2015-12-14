@@ -1,0 +1,17 @@
+#!/bin/sh
+#find . -regextype posix-egrep -regex '.+\.(c|cpp|h|java|aidl)$' -not -path '*/indie/pdf/*' -not -path '*/android/sdk/*' -not -path '*/common/utils/boost/*' -not -path '*/common/protocols/webrtc/*' -not -path '*/jni/prebuilt/*' -not -path '*/windows/*' -print0 | xargs -0 ls -L1 > cscope.files
+
+FIND="find -regextype posix-egrep -regex '.+\.(c|cpp|h|java|aidl|m|mm)$' -path "
+PRUNE="-not -path '*/build/*' -not -path './common/protocols/webrtc/*' -not -path './common/utils/boost/*' -not -path './android/screenovate/libraries/source/service/jni/prebuilt/*'"
+
+rm -f cscope.files
+
+eval "$FIND './android/screenovate/*' $PRUNE >> cscope.files"
+eval "$FIND './iphone/screenovate/*' $PRUNE >> cscope.files"
+eval "$FIND './windows/*' $PRUNE >> cscope.files"
+eval "$FIND './common/*' $PRUNE >> cscope.files"
+# eval "$FIND './android/screenovate/libraries/source/service/jni/prebuilt/arm/api-19/*' >> cscope.files"
+
+cscope -b -k
+rm -f tags
+cat cscope.files | xargs ctags -a 

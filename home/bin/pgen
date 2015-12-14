@@ -1,0 +1,4 @@
+#!/bin/sh
+find . -regex ".+\.\(py\)" > cscope.files
+cscope -b -k
+ctags $(cat cscope.files)
