@@ -11,8 +11,8 @@
     add-unmerged = "!f() { git diff --name-status --diff-filter=U | cut -f2 ; }; git add `f`"
 	d = difftool
 [user]
-	name = 
-	email = 
+	name = Tal Zarfati
+	email = talzarfati@gmail.com
 [color]
 	ui = true
     branch = auto
