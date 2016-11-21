@@ -43,7 +43,7 @@ set t_Co=256
 "let g:ycm_global_ycm_extra_conf = "~/.ycm_extra_conf.py"
 
 let g:ctrlp_working_path_mode = 'a'
-"let g:ctrlp_user_command = 'find %s -regex ".+\.\(py\|m\|mm\|java\|aidl\|c\|cpp\|cc\|cxx\|h\|hpp\|ipp\|cs\|mk\|xml\|gradle\|json\|js\|css\|html\|jsx\)$" -type f ! -path "*/boost/*" ! -path "*/intermediates/*" ! -path "*/bin/*" ! -path "*/gen/*" ! -path "*/sdk/*" ! -path "*/build*" ! -path "*/prebuilt/*" ! -path "*/obj/*" ! -path "*/.repo/*" ! -path "*/.git/*" ! -path "*/.idea/*"'
+"let g:ctrlp_user_command = 'find %s -regex ".+\.\(py\|m\|mm\|java\|aidl\|c\|cpp\|cc\|cxx\|h\|hpp\|ipp\|cs\|mk\|xml\|gradle\|json\|js\|css\|html\|jsx\)$" -type f ! -path "*/boost/*" ! -path "*/intermediates/*" ! -path "*/bin/*" ! -path "*/gen/*" ! -path "*/sdk/*" !  -path "*/prebuilt/*" ! -path "*/obj/*" ! -path "*/.repo/*" ! -path "*/.git/*" ! -path "*/.idea/*"'
 
 let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden --ignore .git --ignore .svn --ignore .hg --ignore .DS_Store --ignore "**/*.pyc" --ignore "*/boost/*" --ignore "*/intermediates/*" --ignore "*/bin/*" --ignore "*/gen/*" --ignore "*/sdk/*" --ignore "*/build*" --ignore "*/prebuilt/*" --ignore "*/obj/*" --ignore "*/.repo/*" --ignore "*/.git/*" --ignore "*/.idea/*" -g "\.(py|m|mm|java|aidl|c|cpp|cc|cxx|h|hpp|ipp|cs|mk|xml|gradle)"'
 let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
@@ -69,7 +69,7 @@ let Tlist_WinWidth=55
 "let Tlist_Use_Right_Window=1
 let Tlist_Use_Right_Window=0
 let Tlist_File_Fold_Auto_Close=1
-let NERDTreeWinSize=55
+let NERDTreeWinSize=35
 let NERDTreeIgnore = ['\(\.pyc\|cscope.files\|cscope.out\|tags\)$']
 
 "let g:tmux_navigator_no_mappings = 1
