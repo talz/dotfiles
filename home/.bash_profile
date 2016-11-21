@@ -35,7 +35,7 @@ fi
 #    PATH="$HOME/.android-sdk-macosx/tools:$PATH"
 #fi
 
-PATH="/Users/talz/code/screenovate/platform/android/sdk/android-sdk-macosx/platform-tools":$PATH
+PATH="/usr/local/opt/ccache/libexec;/Users/talz/code/screenovate/platform/android/sdk/android-sdk-macosx/platform-tools":$PATH
 
 
 if [ -d "/usr/local/bin" ] ; then
@@ -58,7 +58,7 @@ alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 
 export BUILD_MAC_SDK_EXPERIMENTAL=1
 
-export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export CLICOLOR=1
 export LSCOLORS=GxHxCxDxBxegedabagaced
 
@@ -66,9 +66,8 @@ export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:$HOME/bin/libmobiledevice/"
 PATH="$HOME/bin:$PATH"
 
 PATH="$HOME/bin/libmobiledevice:$PATH"
-#PATH="$HOME/.depot_tools:$PATH"
-export NACL_SDK_ROOT=~/.nacl_sdk/pepper_44
-
+export PATH=$HOME/code/chrome/depot_tools:"$PATH"
+export NACL_SDK_ROOT=~/.nacl_sdk/pepper_49
 
 
 alias ilog='idevicesyslog -u `idevice_id -l`'
@@ -77,3 +76,9 @@ export CLICOLOR=1
 #export TERM=xterm-256color
 export GOPATH=$HOME/code/talz/go
 export SLACK_TOKEN="xoxp-7424968405-7426320754-8370589138-e30a69"
+
+export NDK_HOME=$HOME/Library/Android/sdk/ndk-bundle
+export ANDROID_HOME=$HOME/Library/Android/sdk
+. $HOME/code/screenovate/screenovate/prepare.sh
+
+export PATH=$ANDROID_HOME/cmake/3.6.3133135/bin/:"$PATH"

@@ -136,6 +136,15 @@ function! s:ClangCompleteInit()
     let g:clang_restore_cr_imap = 'iunmap <buffer> <CR>'
   endif
 
+  if !exists('g:clang_omnicppcomplete_compliance')
+    let g:clang_omnicppcomplete_compliance = 0
+  endif
+
+  if g:clang_omnicppcomplete_compliance == 1
+    let g:clang_complete_auto = 0
+    let g:clang_make_default_keymappings = 0
+  endif
+
   call LoadUserOptions()
 
   let b:my_changedtick = b:changedtick
@@ -145,7 +154,7 @@ function! s:ClangCompleteInit()
     let b:clang_parameters = '-x objective-c'
   endif
 
-  if &filetype == 'cpp' || &filetype == 'objcpp'
+  if &filetype == 'cpp' || &filetype == 'objcpp' || &filetype =~ 'cpp.*' || &filetype =~ 'objcpp.*'
     let b:clang_parameters .= '++'
   endif
 
@@ -179,6 +188,10 @@ function! s:ClangCompleteInit()
     execute "nnoremap <buffer> <silent> " . g:clang_jumpto_back_key . " <C-O>"
   endif
 
+  if g:clang_omnicppcomplete_compliance == 1
+    inoremap <expr> <buffer> <C-X><C-U> <SID>LaunchCompletion()
+  endif
+
   " Force menuone. Without it, when there's only one completion result,
   " it can be confusing (not completing and no popup)
   if g:clang_auto_select != 2
@@ -198,7 +211,10 @@ function! s:ClangCompleteInit()
   endif
 
   setlocal completefunc=ClangComplete
-  setlocal omnifunc=ClangComplete
+  if g:clang_omnicppcomplete_compliance == 0
+    setlocal omnifunc=ClangComplete
+  endif
+
 endfunction
 
 function! LoadUserOptions()
@@ -265,14 +281,16 @@ function! s:processFilename(filename, root)
   else
     " If a windows file, the filename may need to be quoted.
     if s:isWindows()
+      let l:root = substitute(a:root, '\\', '/', 'g')
       if matchstr(a:filename, '\C^".*"\s*$') == ''
         let l:filename = substitute(a:filename, '\C^\(.\{-}\)\s*$'
-                                            \ , '"' . a:root . '\1"', 'g')
+                                            \ , '"' . l:root . '\1"', 'g')
       else
         " Strip first double-quote and prepend the root.
-        let l:filename = substitute(a:filename, '\C^"\(.\{-}\)\s*$'
-                                            \ , '"' . a:root . '\1"', 'g')
+        let l:filename = substitute(a:filename, '\C^"\(.\{-}\)"\s*$'
+                                            \ , '"' . l:root . '\1"', 'g')
       endif
+      let l:filename = substitute(l:filename, '/', '\\', 'g')
     else
       " For Unix, assume the filename is already escaped/quoted correctly
       let l:filename = shellescape(a:root) . a:filename

@@ -16,7 +16,7 @@ filetype plugin indent on
 
 "set ignorecase
 "set smartcase 
-set clipboard=unnamed
+"set clipboard=unnamed
 set showcmd	 
 set showmatch 
 set incsearch 
@@ -39,11 +39,11 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 set t_Co=256
 
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_global_ycm_extra_conf = "~/.ycm_extra_conf.py"
+"let g:ycm_confirm_extra_conf = 0
+"let g:ycm_global_ycm_extra_conf = "~/.ycm_extra_conf.py"
 
 let g:ctrlp_working_path_mode = 'a'
-"let g:ctrlp_user_command = 'find %s -regex ".+\.\(py\|m\|mm\|java\|aidl\|c\|cpp\|cc\|cxx\|h\|hpp\|ipp\|cs\|mk\|xml\|gradle\)$" -type f ! -path "*/boost/*" ! -path "*/intermediates/*" ! -path "*/bin/*" ! -path "*/gen/*" ! -path "*/sdk/*" ! -path "*/build*" ! -path "*/prebuilt/*" ! -path "*/obj/*" ! -path "*/.repo/*" ! -path "*/.git/*" ! -path "*/.idea/*"'
+"let g:ctrlp_user_command = 'find %s -regex ".+\.\(py\|m\|mm\|java\|aidl\|c\|cpp\|cc\|cxx\|h\|hpp\|ipp\|cs\|mk\|xml\|gradle\|json\|js\|css\|html\|jsx\)$" -type f ! -path "*/boost/*" ! -path "*/intermediates/*" ! -path "*/bin/*" ! -path "*/gen/*" ! -path "*/sdk/*" ! -path "*/build*" ! -path "*/prebuilt/*" ! -path "*/obj/*" ! -path "*/.repo/*" ! -path "*/.git/*" ! -path "*/.idea/*"'
 
 let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden --ignore .git --ignore .svn --ignore .hg --ignore .DS_Store --ignore "**/*.pyc" --ignore "*/boost/*" --ignore "*/intermediates/*" --ignore "*/bin/*" --ignore "*/gen/*" --ignore "*/sdk/*" --ignore "*/build*" --ignore "*/prebuilt/*" --ignore "*/obj/*" --ignore "*/.repo/*" --ignore "*/.git/*" --ignore "*/.idea/*" -g "\.(py|m|mm|java|aidl|c|cpp|cc|cxx|h|hpp|ipp|cs|mk|xml|gradle)"'
 let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
@@ -56,6 +56,8 @@ let g:ctrlp_use_caching=1
 let g:clang_library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/'
 let g:clang_complete_copen=1
 let g:clang_complete_macros=1
+let g:clang_complete_patterns=1
+let g:clang_complete_debug=1
 let g:clang_use_library=1
 
 
@@ -92,4 +94,4 @@ map <C-b> :CtrlPBuffer<CR>
 map <C-Tab> :tabn<CR>
 map <C-S-Tab> :tabp<CR>
 
-colorscheme desert
+colorscheme monokai

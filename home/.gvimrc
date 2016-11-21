@@ -14,6 +14,6 @@ set guioptions-=m
 " Sets the percent transparency
 " set transparency=5
 
-set guifont=Monaco:h10
-set transparency=10
-colorscheme desert
+set guifont=Monaco:h12
+" set transparency=10
+colorscheme dracula
