@@ -47,7 +47,7 @@ fi
 
 
 # TODO: do this only if we are on mac
-alias ls='ls -G'
+alias ls='ls --color'
 alias adb_choose='source ~/bin/adb_choose'
 alias tl='tmux list-session'
 alias ta='tmux attach-session -t'
@@ -58,7 +58,6 @@ alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 
 export BUILD_MAC_SDK_EXPERIMENTAL=1
 
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export CLICOLOR=1
 export LSCOLORS=GxHxCxDxBxegedabagaced
 
@@ -79,6 +78,3 @@ export SLACK_TOKEN="xoxp-7424968405-7426320754-8370589138-e30a69"
 
 export NDK_HOME=$HOME/Library/Android/sdk/ndk-bundle
 export ANDROID_HOME=$HOME/Library/Android/sdk
-. $HOME/code/screenovate/screenovate/prepare.sh
-
-export PATH=$ANDROID_HOME/cmake/3.6.3133135/bin/:"$PATH"
