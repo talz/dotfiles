@@ -33,6 +33,7 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 set nowrap
+set cursorline
 
 set backspace=indent,eol,start
 set runtimepath^=~/.vim/bundle/ctrlp.vim
@@ -43,7 +44,7 @@ set t_Co=256
 "let g:ycm_global_ycm_extra_conf = "~/.ycm_extra_conf.py"
 
 let g:ctrlp_working_path_mode = 'a'
-let g:ctrlp_user_command = 'find %s -regex ".+\.\(py\|m\|mm\|java\|aidl\|c\|cpp\|cc\|cxx\|h\|hpp\|ipp\|cs\|mk\|xml\|gradle\|json\|js\|css\|html\|jsx\)$" -type f ! -path "*/boost/*" ! -path "*/intermediates/*" ! -path "*/bin/*" ! -path "*/gen/*" ! -path "*/sdk/*" !  -path "*/prebuilt/*" ! -path "*/obj/*" ! -path "*/.repo/*" ! -path "*/.git/*" ! -path "*/.idea/*"'
+let g:ctrlp_user_command = 'find %s -regex ".+\.\(py\|m\|mm\|java\|aidl\|c\|cpp\|cc\|cxx\|h\|hpp\|ipp\|cs\|mk\|xml\|gradle\|json\|js\|css\|html\|jsx\)$" -type f ! -path "*/boost/*" ! -path "*/intermediates/*" ! -path "*/bin/*" ! -path "*/gen/*" ! -path "*/sdk/*" ! -path "*/prebuilt/*" ! -path "*/obj/*" ! -path "*/.repo/*" ! -path "*/.git/*" ! -path "*/.idea/*"'
 
 "let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden --ignore .git --ignore .svn --ignore .hg --ignore .DS_Store --ignore "**/*.pyc" --ignore "*/boost/*" --ignore "*/intermediates/*" --ignore "*/bin/*" --ignore "*/gen/*" --ignore "*/sdk/*" --ignore "*/build*" --ignore "*/prebuilt/*" --ignore "*/obj/*" --ignore "*/.repo/*" --ignore "*/.git/*" --ignore "*/.idea/*" -g "\.(py|m|mm|java|aidl|c|cpp|cc|cxx|h|hpp|ipp|cs|mk|xml|gradle)"'
 "let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
@@ -54,6 +55,7 @@ let grepprg="ag --nogroup --nocolor"
 let g:ctrlp_use_caching=1
 
 "let g:clang_library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/'
+let g:clang_library_path = '/usr/lib/llvm-3.8/lib/'
 let g:clang_complete_copen=1
 let g:clang_complete_macros=1
 let g:clang_complete_patterns=1
@@ -82,6 +84,10 @@ nnoremap <silent> <C-w><C-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <C-w><C-l> :TmuxNavigateRight<cr>
 nnoremap <silent> <C-w><C-\> :TmuxNavigatePrevious<cr>
 
+nnoremap <leader>gd :!git diff %:p<CR>
+nnoremap <leader>gl :!git log -p %:p<CR>
+nnoremap <leader>ko :A<CR>
+
 map <F3> :TlistClose<CR>:NERDTreeToggle<CR>
 map <F4> :NERDTreeClose<CR> :Tlist<CR>
 
@@ -95,3 +101,7 @@ map <C-Tab> :tabn<CR>
 map <C-S-Tab> :tabp<CR>
 
 colorscheme monokai
+
+if filereadable(".vimrc.local")
+    source .vimrc.local
+endif

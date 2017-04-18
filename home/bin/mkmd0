@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+[ "$UID" -eq 0 ] || exec sudo "$0" "$@"
+
+if [[ "$1" == "stop" ]]; then
+	# stop virtual RAID disk
+	mdadm --stop --scan
+	losetup --detach-all
+	exit 0
+else
+	# setup virtual RAID disk
+	losetup -f ~/qemu/efi1
+	losetup -f ~/qemu/efi2
+	mdadm --build --verbose /dev/md0 --chunk=512 --level=linear --raid-devices=3 /dev/loop0 /dev/nvme0n1p3 /dev/loop1
+	sleep 1
+	chown talz:talz /dev/md0
+fi

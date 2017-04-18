@@ -27,8 +27,8 @@ if [ -d "$HOME/.android-sdk-macosx/platform-tools" ] ; then
     PATH="$HOME/.android-sdk-macosx/platform-tools:$PATH"
 fi
 
-if [ -d "$HOME/.android-sdk-macosx/platform-tools" ] ; then
-    PATH="$HOME/.android-sdk-macosx/platform-tools:$PATH"
+if [ -d "$HOME/Library/Android/sdk/platform-tools" ] ; then
+    PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
 fi
 
 #if [ -d "$HOME/.android-sdk-macosx/tools" ] ; then
