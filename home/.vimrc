@@ -55,7 +55,7 @@ let grepprg="ag --nogroup --nocolor"
 let g:ctrlp_use_caching=1
 
 "let g:clang_library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/'
-let g:clang_library_path = '/usr/lib/llvm-3.8/lib/'
+"let g:clang_library_path = '/usr/lib/llvm-3.8/lib/'
 let g:clang_complete_copen=1
 let g:clang_complete_macros=1
 let g:clang_complete_patterns=1
@@ -100,6 +100,7 @@ map <C-b> :CtrlPBuffer<CR>
 map <C-Tab> :tabn<CR>
 map <C-S-Tab> :tabp<CR>
 
+"colorscheme elflord
 colorscheme monokai
 
 if filereadable(".vimrc.local")

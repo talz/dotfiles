@@ -9,8 +9,8 @@ if [[ "$1" == "stop" ]]; then
 	exit 0
 else
 	# setup virtual RAID disk
-	losetup -f ~/qemu/efi1
-	losetup -f ~/qemu/efi2
+	losetup -f /home/talz/qemu/efi1
+	losetup -f /home/talz/qemu/efi2
 	mdadm --build --verbose /dev/md0 --chunk=512 --level=linear --raid-devices=3 /dev/loop0 /dev/nvme0n1p3 /dev/loop1
 	sleep 1
 	chown talz:talz /dev/md0
