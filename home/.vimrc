@@ -10,7 +10,7 @@ if filereadable("/etc/vim/vimrc.local")
  source /etc/vim/vimrc.local
 endif
 
-execute pathogen#infect()
+"execute pathogen#infect()
 
 filetype plugin indent on
 
@@ -43,13 +43,7 @@ set t_Co=256
 "let g:ycm_global_ycm_extra_conf = "~/.ycm_extra_conf.py"
 
 let g:ctrlp_working_path_mode = 'a'
-"let g:ctrlp_user_command = 'find %s -regex ".+\.\(py\|m\|mm\|java\|aidl\|c\|cpp\|cc\|cxx\|h\|hpp\|ipp\|cs\|mk\|xml\|gradle\|json\|js\|css\|html\|jsx\)$" -type f ! -path "*/boost/*" ! -path "*/intermediates/*" ! -path "*/bin/*" ! -path "*/gen/*" ! -path "*/sdk/*" !  -path "*/prebuilt/*" ! -path "*/obj/*" ! -path "*/.repo/*" ! -path "*/.git/*" ! -path "*/.idea/*"'
-
-let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden --ignore .git --ignore .svn --ignore .hg --ignore .DS_Store --ignore "**/*.pyc" --ignore "*/boost/*" --ignore "*/intermediates/*" --ignore "*/bin/*" --ignore "*/gen/*" --ignore "*/sdk/*" --ignore "*/build*" --ignore "*/prebuilt/*" --ignore "*/obj/*" --ignore "*/.repo/*" --ignore "*/.git/*" --ignore "*/.idea/*" -g "\.(py|m|mm|java|aidl|c|cpp|cc|cxx|h|hpp|ipp|cs|mk|xml|gradle)"'
-let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
-"let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
-"let grepprg=ag\ --nogroup\ --nocolor
-"let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+let g:ctrlp_user_command = 'find %s -regex ".+\.\(py\|m\|mm\|java\|aidl\|c\|cpp\|cc\|cxx\|h\|hpp\|ipp\|cs\|mk\|xml\|gradle\|json\|js\|css\|html\|jsx\)$" -type f ! -path "*/boost/*" ! -path "*/intermediates/*" ! -path "*/bin/*" ! -path "*/gen/*" ! -path "*/sdk/*" ! -path "*/prebuilt/*" ! -path "*/obj/*" ! -path "*/.repo/*" ! -path "*/.git/*" ! -path "*/.idea/*"'
 let grepprg="ag --nogroup --nocolor"
 let g:ctrlp_use_caching=1
 
@@ -60,9 +54,6 @@ let g:clang_complete_patterns=1
 let g:clang_complete_debug=1
 let g:clang_use_library=1
 
-
-"command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-"nnoremap \ :Ag<SPACE>
 
 let Cscope_JumpError=0
 let Tlist_WinWidth=55
@@ -95,3 +86,7 @@ map <C-Tab> :tabn<CR>
 map <C-S-Tab> :tabp<CR>
 
 colorscheme monokai
+
+if filereadable(".vimrc.local")
+    source .vimrc.local
+endif
