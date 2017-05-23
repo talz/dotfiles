@@ -47,7 +47,6 @@ fi
 
 
 # TODO: do this only if we are on mac
-alias ls='ls --color'
 alias adb_choose='source ~/bin/adb_choose'
 alias tl='tmux list-session'
 alias ta='tmux attach-session -t'

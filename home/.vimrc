@@ -44,7 +44,7 @@ set t_Co=256
 "let g:ycm_global_ycm_extra_conf = "~/.ycm_extra_conf.py"
 
 let g:ctrlp_working_path_mode = 'a'
-let g:ctrlp_user_command = 'find %s -regex ".+\.\(py\|m\|mm\|java\|aidl\|c\|cpp\|cc\|cxx\|h\|hpp\|ipp\|cs\|mk\|xml\|gradle\|json\|js\|css\|html\|jsx\)$" -type f ! -path "*/boost/*" ! -path "*/intermediates/*" ! -path "*/bin/*" ! -path "*/gen/*" ! -path "*/sdk/*" ! -path "*/prebuilt/*" ! -path "*/obj/*" ! -path "*/.repo/*" ! -path "*/.git/*" ! -path "*/.idea/*"'
+"let g:ctrlp_user_command = 'find %s -regex ".+\.\(py\|m\|mm\|java\|aidl\|c\|cpp\|cc\|cxx\|h\|hpp\|ipp\|cs\|mk\|xml\|gradle\|json\|js\|css\|html\|jsx\)$" -type f ! -path "*/boost/*" ! -path "*/intermediates/*" ! -path "*/bin/*" ! -path "*/gen/*" ! -path "*/sdk/*" ! -path "*/prebuilt/*" ! -path "*/obj/*" ! -path "*/.repo/*" ! -path "*/.git/*" ! -path "*/.idea/*"'
 
 "let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden --ignore .git --ignore .svn --ignore .hg --ignore .DS_Store --ignore "**/*.pyc" --ignore "*/boost/*" --ignore "*/intermediates/*" --ignore "*/bin/*" --ignore "*/gen/*" --ignore "*/sdk/*" --ignore "*/build*" --ignore "*/prebuilt/*" --ignore "*/obj/*" --ignore "*/.repo/*" --ignore "*/.git/*" --ignore "*/.idea/*" -g "\.(py|m|mm|java|aidl|c|cpp|cc|cxx|h|hpp|ipp|cs|mk|xml|gradle)"'
 "let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
@@ -54,7 +54,9 @@ let g:ctrlp_user_command = 'find %s -regex ".+\.\(py\|m\|mm\|java\|aidl\|c\|cpp\
 let grepprg="ag --nogroup --nocolor"
 let g:ctrlp_use_caching=1
 
-"let g:clang_library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/'
+if has("mac")
+let g:clang_library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/'
+endif
 "let g:clang_library_path = '/usr/lib/llvm-3.8/lib/'
 let g:clang_complete_copen=1
 let g:clang_complete_macros=1
@@ -99,6 +101,8 @@ map <C-b> :CtrlPBuffer<CR>
 
 map <C-Tab> :tabn<CR>
 map <C-S-Tab> :tabp<CR>
+
+nnoremap <leader>ko :A<CR>
 
 "colorscheme elflord
 colorscheme monokai
