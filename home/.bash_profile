@@ -23,24 +23,25 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 
-if [ -d "$HOME/.android-sdk-macosx/platform-tools" ] ; then
-    PATH="$HOME/.android-sdk-macosx/platform-tools:$PATH"
+if [ -d "$HOME/.android-sdk" ] ; then
+    PATH="$HOME/.android-sdk/platform-tools:$PATH"
+    PATH="$HOME/.android-sdk/bin:$PATH"
+    PATH="$HOME/.android-sdk/tools:$PATH"
+    PATH="$HOME/.android-sdk/tools/bin:$PATH"
+    export ANDROID_HOME="$HOME/.android-sdk"
+    export NDK=$ANDROID_HOME/ndk-bundle/
 fi
 
-if [ -d "$HOME/Library/Android/sdk/platform-tools" ] ; then
+if [ -d "$HOME/Library/Android/sdk" ] ; then
     PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
+    PATH="$HOME/Library/Android/sdk/bin:$PATH"
+    PATH="$HOME/Library/Android/sdk/tools:$PATH"
+    PATH="$HOME/Library/Android/sdk/tools/bin:$PATH"
+    export ANDROID_HOME="$HOME/Library/Android/sdk"
+    export NDK=$ANDROID_HOME/ndk-bundle/
 fi
 
-#if [ -d "$HOME/.android-sdk-macosx/tools" ] ; then
-#    PATH="$HOME/.android-sdk-macosx/tools:$PATH"
-#fi
 
-PATH="/usr/local/opt/ccache/libexec;/Users/talz/code/screenovate/platform/android/sdk/android-sdk-macosx/platform-tools":$PATH
-
-
-if [ -d "/usr/local/bin" ] ; then
-    PATH="/usr/local/bin:$PATH"
-fi
 
 #export WINEARCH="win32"
 #export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=256m"
@@ -50,7 +51,11 @@ fi
 alias adb_choose='source ~/bin/adb_choose'
 alias tl='tmux list-session'
 alias ta='tmux attach-session -t'
+
+if [ "$(uname)" == "Darwin" ]; then
 alias vim='gvim -v'
+alias ctags="`brew --prefix`/bin/ctags"
+fi
 
 #TODO: do this only if this file exists
 . $HOME/bin/git-completion.bash
@@ -75,5 +80,22 @@ export CLICOLOR=1
 export GOPATH=$HOME/code/talz/go
 export SLACK_TOKEN="xoxp-7424968405-7426320754-8370589138-e30a69"
 
-export NDK_HOME=$HOME/Library/Android/sdk/ndk-bundle
-export ANDROID_HOME=$HOME/Library/Android/sdk
+if [ "$(uname)" == "Darwin" ]; then
+export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
+export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/flex/bin:/usr/local/opt/bison/bin:$PATH"
+export CMAKE_INCLUDE_PATH="/usr/local/opt/flex/include"
+export CMAKE_LIBRARY_PATH="/usr/local/opt/flex/lib;/usr/local/opt/bison/lib"
+fi
+
+alias ls='ls --color=auto'
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+
