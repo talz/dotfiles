@@ -131,3 +131,5 @@ transfer() { if [ $# -eq 0 ]; then echo "No arguments specified. Usage:\necho tr
 
     export NVM_DIR="/Users/talz/.nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+source "$HOME/.homesick/repos/homeshick/homeshick.sh"
