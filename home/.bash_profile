@@ -78,7 +78,7 @@ alias ilog='idevicesyslog -u `idevice_id -l`'
 export CLICOLOR=1
 #export TERM=xterm-256color
 export GOPATH=$HOME/code/talz/go
-export SLACK_TOKEN="xoxp-7424968405-7426320754-8370589138-e30a69"
+export EDITOR="vim"
 
 if [ "$(uname)" == "Darwin" ]; then
 export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
