@@ -1,0 +1,4 @@
+#!/bin/sh
+find . -name "*.py" -or -name "*.cs" -or -name "*.java" -or -name "*.h" -or -name "*.cpp" -or -name "*.c" -or -name "*.cpp" -or -name "*.h" -or -name "*.hpp" -or -name "*.js" -or -name "*.ts" | grep -v node_modules > cscope.files
+cscope -b
+

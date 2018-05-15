@@ -40,6 +40,8 @@ set cursorline
 "set ttimeoutlen=250
 "set notimeout
 
+au BufNewFile,BufRead *.py set fileformat=unix
+
 set backspace=indent,eol,start
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
