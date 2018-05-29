@@ -93,6 +93,8 @@ fi
 alias ls='ls --color=auto'
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
+alias ip='ip --color'
+alias ipb='ip --color --brief'
 
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'

@@ -39,8 +39,26 @@ set cursorline
 "set ttimeout
 "set ttimeoutlen=250
 "set notimeout
-
+"
+highlight BadWhitespace ctermbg=red guibg=darkred
+au BufNewFile,BufRead *.py match Error /\s\+$/
+au BufNewFile,BufRead *.py set tabstop=4
+au BufNewFile,BufRead *.py set softtabstop=4
+au BufNewFile,BufRead *.py set shiftwidth=4
+au BufNewFile,BufRead *.py set textwidth=79
+au BufNewFile,BufRead *.py set expandtab
+au BufNewFile,BufRead *.py set autoindent
 au BufNewFile,BufRead *.py set fileformat=unix
+au BufNewFile,BufRead *.py set makeprg=pylint\ --reports=n\ --output-format=parseable\ %:p
+au BufNewFile,BufRead *.py set errorformat=%f:%l:\ %m
+
+autocmd FileType python setlocal completeopt-=preview
+
+
+
+
+"au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
 
 set backspace=indent,eol,start
 set runtimepath^=~/.vim/bundle/ctrlp.vim
@@ -68,6 +86,9 @@ let g:clang_complete_macros=1
 let g:clang_complete_patterns=1
 let g:clang_complete_debug=1
 let g:clang_use_library=1
+let g:jedi#popup_on_dot = 0
+let g:jedi#popup_select_first = 0
+
 
 
 "command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!

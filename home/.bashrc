@@ -121,7 +121,7 @@ function color_my_prompt {
     local __last_color="\[\033[00m\]"
     local __open_bracet="\[\033[01;36m\]["
     local __close_bracet="\[\033[01;36m\]]"
-    export PS1="$__open_bracet$__user_and_host $__cur_location$__close_bracet $__git_branch_color$__git_branch$__prompt_tail$__last_color "
+    export PS1="${debian_chroot:+($debian_chroot)}$__open_bracet$__user_and_host $__cur_location$__close_bracet $__git_branch_color$__git_branch$__prompt_tail$__last_color "
 }
 color_my_prompt
 
