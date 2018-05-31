@@ -142,5 +142,7 @@ if [ "$(uname)" == "Linux" ]; then
 export VAGRANT_DEFAULT_PROVIDER="lxc"
 fi
 
+export HOMESICK_REPO="git@github.com:talz/dotfiles"
+
 
 set -o vi
