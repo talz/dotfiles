@@ -73,7 +73,7 @@ fi
 
 
 function color_my_prompt {
-    if [ "$x" = "tal-thinkpad" ]; then
+    if [ "$(hostname)" = "tal-thinkpad" ]; then
         local __user_and_host="\[\033[01;33m\]\u@\h"
     else
        local __user_and_host="\[\033[01;34m\]\u@\h"
