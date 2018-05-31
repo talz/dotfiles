@@ -112,7 +112,11 @@ set -o vi
 export HISTSIZE=500000 
 
 function color_my_prompt {
-    local __user_and_host="\[\033[01;33m\]\u@\h"
+    if [ "$x" = "tal-thinkpad" ]; then
+        local __user_and_host="\[\033[01;33m\]\u@\h"
+    else
+       local __user_and_host="\[\033[01;34m\]\u@\h"
+    fi
     local __cur_location="\[\033[01;36m\]\W"
     local __git_branch_color="\[\033[31m\]"
     #local __git_branch="\`ruby -e \"print (%x{git branch 2> /dev/null}.grep(/^\*/).first || '').gsub(/^\* (.+)$/, '(\1) ')\"\`"
