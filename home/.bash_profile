@@ -8,7 +8,6 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
-
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
@@ -21,6 +20,12 @@ fi
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
+
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
+
 
 
 if [ -d "$HOME/.android-sdk" ] ; then
@@ -57,6 +62,10 @@ alias vim='gvim -v'
 alias ctags="`brew --prefix`/bin/ctags"
 fi
 
+if [ -f $HOME/.local/bin/virtualenvwrapper.sh ]; then
+    . $HOME/.local/bin/virtualenvwrapper.sh
+fi
+
 #TODO: do this only if this file exists
 . $HOME/bin/git-completion.bash
 
@@ -88,6 +97,10 @@ export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/flex/bin:/usr/local/opt/bison/bin:$PATH"
 export CMAKE_INCLUDE_PATH="/usr/local/opt/flex/include"
 export CMAKE_LIBRARY_PATH="/usr/local/opt/flex/lib;/usr/local/opt/bison/lib"
+fi
+
+if [ "$(uname)" == "Linux" ]; then
+export VAGRANT_DEFAULT_PROVIDER="lxc"
 fi
 
 alias ls='ls --color=auto'

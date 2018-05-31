@@ -18,7 +18,7 @@ filetype plugin indent on
 
 set ignorecase
 "set smartcase 
-"set clipboard=unnamed
+set clipboard=unnamed
 set showcmd	 
 set showmatch 
 set incsearch 
