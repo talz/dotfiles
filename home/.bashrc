@@ -118,6 +118,17 @@ if [ -d "$HOME/Library/Android/sdk" ] ; then
     export NDK=$ANDROID_HOME/ndk-bundle/
 fi
 
+if [ -d "$HOME/Android/Sdk" ] ; then
+    PATH="$HOME/Android/Sdk/platform-tools:$PATH"
+    PATH="$HOME/Android/Sdk/bin:$PATH"
+    PATH="$HOME/Android/Sdk/tools:$PATH"
+    PATH="$HOME/Android/Sdk/tools/bin:$PATH"
+    export ANDROID_HOME="$HOME/Android/Sdk"
+    export NDK=$ANDROID_HOME/ndk-bundle/
+fi
+
+
+
 if [ -f $HOME/.local/bin/virtualenvwrapper.sh ]; then
     source $HOME/.local/bin/virtualenvwrapper.sh
 fi
