@@ -17,3 +17,8 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 
+if [ "$(uname)" == "Linux" ]; then
+    alias open=xdg-open
+fi
+
+

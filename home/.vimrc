@@ -45,9 +45,10 @@ au BufNewFile,BufRead *.py match Error /\s\+$/
 au BufNewFile,BufRead *.py set tabstop=4
 au BufNewFile,BufRead *.py set softtabstop=4
 au BufNewFile,BufRead *.py set shiftwidth=4
-au BufNewFile,BufRead *.py set textwidth=79
 au BufNewFile,BufRead *.py set expandtab
 au BufNewFile,BufRead *.py set autoindent
+au BufNewFile,BufRead *.py set textwidth=99
+au BufNewFile,BufRead *.py set colorcolumn=100
 au BufNewFile,BufRead *.py set fileformat=unix
 au BufNewFile,BufRead *.py set makeprg=pylint\ --reports=n\ --output-format=parseable\ %:p
 au BufNewFile,BufRead *.py set errorformat=%f:%l:\ %m
@@ -88,6 +89,8 @@ let g:clang_complete_debug=1
 let g:clang_use_library=1
 let g:jedi#popup_on_dot = 0
 let g:jedi#popup_select_first = 0
+let g:jedi#show_call_signatures = 0
+let g:jedi#smart_auto_mappings = 0
 
 
 
@@ -137,3 +140,6 @@ colorscheme monokai
 if filereadable(".vimrc.local")
     source .vimrc.local
 endif
+
+hi Normal guibg=NONE ctermbg=NONE
+
