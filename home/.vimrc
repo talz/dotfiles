@@ -134,8 +134,7 @@ map <C-S-Tab> :tabp<CR>
 
 nnoremap <leader>ko :A<CR>
 
-"colorscheme elflord
-colorscheme gruvbox
+colorscheme eldar
 
 if filereadable(".vimrc.local")
     source .vimrc.local
