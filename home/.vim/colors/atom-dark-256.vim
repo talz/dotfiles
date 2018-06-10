@@ -67,9 +67,9 @@ elseif has("gui_running") || (&t_Co == 256 && (&term ==# "xterm" || &term =~# "^
     CSAHi PmenuSel term=NONE cterm=NONE ctermbg=244 ctermfg=fg gui=NONE guibg=#808080 guifg=fg
     CSAHi vimSynKeyRegion term=NONE cterm=NONE ctermbg=bg ctermfg=fg gui=NONE guibg=bg guifg=fg
     CSAHi PmenuThumb term=NONE cterm=NONE ctermbg=16 ctermfg=117 gui=NONE guibg=Black guifg=#66D9EF
-    CSAHi TabLine term=underline cterm=NONE ctermbg=234 ctermfg=244 gui=NONE guibg=#1D1F21 guifg=#808080
+    CSAHi TabLine term=underline cterm=NONE ctermbg=234 ctermfg=244 gui=NONE  guifg=#808080
     CSAHi TabLineSel term=bold cterm=bold ctermbg=bg ctermfg=fg gui=bold guibg=bg guifg=fg
-    CSAHi TabLineFill term=reverse cterm=reverse ctermbg=234 ctermfg=234 gui=reverse guibg=#1D1F21 guifg=#1D1F21
+    CSAHi TabLineFill term=reverse cterm=reverse ctermbg=234 ctermfg=234 gui=reverse  guifg=#1D1F21
     CSAHi CursorColumn term=reverse cterm=NONE ctermbg=59 ctermfg=fg gui=NONE guibg=#293739 guifg=fg
     CSAHi Identifier term=underline cterm=NONE ctermbg=bg ctermfg=189 gui=NONE guibg=bg guifg=#B6B7EB
     CSAHi NERDTreeLink term=NONE cterm=NONE ctermbg=bg ctermfg=fg gui=NONE guibg=bg guifg=fg
@@ -387,9 +387,9 @@ elseif has("gui_running") || (&t_Co == 256 && (&term ==# "xterm" || &term =~# "^
     CSAHi PmenuSel term=NONE cterm=NONE ctermbg=244 ctermfg=fg gui=NONE guibg=#808080 guifg=fg
     CSAHi vimSynKeyRegion term=NONE cterm=NONE ctermbg=bg ctermfg=fg gui=NONE guibg=bg guifg=fg
     CSAHi PmenuThumb term=NONE cterm=NONE ctermbg=16 ctermfg=123 gui=NONE guibg=Black guifg=#66D9EF
-    CSAHi TabLine term=underline cterm=NONE ctermbg=234 ctermfg=244 gui=NONE guibg=#1D1F21 guifg=#808080
+    CSAHi TabLine term=underline cterm=NONE ctermbg=234 ctermfg=244 gui=NONE  guifg=#808080
     CSAHi TabLineSel term=bold cterm=bold ctermbg=bg ctermfg=fg gui=bold guibg=bg guifg=fg
-    CSAHi TabLineFill term=reverse cterm=reverse ctermbg=234 ctermfg=234 gui=reverse guibg=#1D1F21 guifg=#1D1F21
+    CSAHi TabLineFill term=reverse cterm=reverse ctermbg=234 ctermfg=234 gui=reverse  guifg=#1D1F21
     CSAHi CursorColumn term=reverse cterm=NONE ctermbg=59 ctermfg=fg gui=NONE guibg=#293739 guifg=fg
     CSAHi Identifier term=underline cterm=NONE ctermbg=bg ctermfg=189 gui=NONE guibg=bg guifg=#B6B7EB
     CSAHi NERDTreeLink term=NONE cterm=NONE ctermbg=bg ctermfg=fg gui=NONE guibg=bg guifg=fg
@@ -707,9 +707,9 @@ elseif has("gui_running") || &t_Co == 256
     CSAHi PmenuSel term=NONE cterm=NONE ctermbg=244 ctermfg=fg gui=NONE guibg=#808080 guifg=fg
     CSAHi vimSynKeyRegion term=NONE cterm=NONE ctermbg=bg ctermfg=fg gui=NONE guibg=bg guifg=fg
     CSAHi PmenuThumb term=NONE cterm=NONE ctermbg=16 ctermfg=81 gui=NONE guibg=Black guifg=#66D9EF
-    CSAHi TabLine term=underline cterm=NONE ctermbg=234 ctermfg=244 gui=NONE guibg=#1D1F21 guifg=#808080
+    CSAHi TabLine term=underline cterm=NONE ctermbg=234 ctermfg=244 gui=NONE  guifg=#808080
     CSAHi TabLineSel term=bold cterm=bold ctermbg=bg ctermfg=fg gui=bold guibg=bg guifg=fg
-    CSAHi TabLineFill term=reverse cterm=reverse ctermbg=234 ctermfg=234 gui=reverse guibg=#1D1F21 guifg=#1D1F21
+    CSAHi TabLineFill term=reverse cterm=reverse ctermbg=234 ctermfg=234 gui=reverse  guifg=#1D1F21
     CSAHi CursorColumn term=reverse cterm=NONE ctermbg=23 ctermfg=fg gui=NONE guibg=#293739 guifg=fg
     CSAHi Identifier term=underline cterm=NONE ctermbg=bg ctermfg=146 gui=NONE guibg=bg guifg=#B6B7EB
     CSAHi NERDTreeLink term=NONE cterm=NONE ctermbg=bg ctermfg=fg gui=NONE guibg=bg guifg=fg
@@ -1027,9 +1027,9 @@ elseif has("gui_running") || &t_Co == 88
     CSAHi PmenuSel term=NONE cterm=NONE ctermbg=83 ctermfg=fg gui=NONE guibg=#808080 guifg=fg
     CSAHi vimSynKeyRegion term=NONE cterm=NONE ctermbg=bg ctermfg=fg gui=NONE guibg=bg guifg=fg
     CSAHi PmenuThumb term=NONE cterm=NONE ctermbg=16 ctermfg=43 gui=NONE guibg=Black guifg=#66D9EF
-    CSAHi TabLine term=underline cterm=NONE ctermbg=80 ctermfg=83 gui=NONE guibg=#1D1F21 guifg=#808080
+    CSAHi TabLine term=underline cterm=NONE ctermbg=80 ctermfg=83 gui=NONE  guifg=#808080
     CSAHi TabLineSel term=bold cterm=bold ctermbg=bg ctermfg=fg gui=bold guibg=bg guifg=fg
-    CSAHi TabLineFill term=reverse cterm=reverse ctermbg=80 ctermfg=80 gui=reverse guibg=#1D1F21 guifg=#1D1F21
+    CSAHi TabLineFill term=reverse cterm=reverse ctermbg=80 ctermfg=80 gui=reverse  guifg=#1D1F21
     CSAHi CursorColumn term=reverse cterm=NONE ctermbg=80 ctermfg=fg gui=NONE guibg=#293739 guifg=fg
     CSAHi Identifier term=underline cterm=NONE ctermbg=bg ctermfg=59 gui=NONE guibg=bg guifg=#B6B7EB
     CSAHi NERDTreeLink term=NONE cterm=NONE ctermbg=bg ctermfg=fg gui=NONE guibg=bg guifg=fg

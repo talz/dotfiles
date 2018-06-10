@@ -134,7 +134,7 @@ map <C-S-Tab> :tabp<CR>
 
 nnoremap <leader>ko :A<CR>
 
-colorscheme atom-dark-256
+colorscheme atom-dark
 
 if filereadable(".vimrc.local")
     source .vimrc.local
