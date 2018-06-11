@@ -134,7 +134,7 @@ map <C-S-Tab> :tabp<CR>
 
 nnoremap <leader>ko :A<CR>
 
-colorscheme atom-dark
+colorscheme monokai
 
 if filereadable(".vimrc.local")
     source .vimrc.local
