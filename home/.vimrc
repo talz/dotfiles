@@ -130,7 +130,7 @@ map <C-S-Tab> :tabp<CR>
 
 nnoremap <leader>ko :A<CR>
 
-#colorscheme monokai
+"colorscheme monokai
 colorscheme atom-dark-256
 
 
