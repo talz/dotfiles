@@ -8,10 +8,6 @@ au BufRead,BufNewFile *.thrift setfiletype thrift
 autocmd FileType qf wincmd J
 "autocmd CompleteDone * pclose
 
-if filereadable("/etc/vim/vimrc.local")
- source /etc/vim/vimrc.local
-endif
-
 execute pathogen#infect()
 
 filetype plugin indent on
@@ -134,11 +130,20 @@ map <C-S-Tab> :tabp<CR>
 
 nnoremap <leader>ko :A<CR>
 
-colorscheme monokai
+#colorscheme monokai
+colorscheme atom-dark-256
+
+
+if filereadable("~/.vim/plugins/python_match.vim")
+    source ~/.vim/plugins/python_match.vim
+endif
+
+
+if filereadable("~/.vim/plugins/python_fn.vim")
+    source ~/.vim/plugins/python_fn.vim
+endif
 
 if filereadable(".vimrc.local")
     source .vimrc.local
 endif
-
-hi Normal guibg=NONE ctermbg=NONE
 
